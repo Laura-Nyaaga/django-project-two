@@ -1,15 +1,23 @@
 from django.db import models
 
-class Class(models.Model):
-    class_name = models.CharField(max_length=20)
-    Instructor = models.CharField(max_length=50)
+# from course.models import Course
+# from student.models import Student
+
+class Classes(models.Model):
+    name = models.CharField(max_length=20)
+    class_id = models.PositiveIntegerField()
     description = models.TextField()
-    class_duration = models.DurationField()
-    class_capacity = models.PositiveSmallIntegerField()
-    course = models.CharField(max_length=20)
-    course_code = models.PositiveIntegerField()
+    capacity = models.PositiveSmallIntegerField()
+    occupied = models.BooleanField(default=False)
+    equipments = models.TextField()
+    # course = models.OneToOneField(Course, on_delete=models.CASCADE)
+    # course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    # code = models.ForeignKey(Course, on_delete= models.CASCADE)
+    # student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def __str__(self):
-           return f"{self.class_name} {self.class_capacity}"
+           return f"{self.name} {self.capacity}"
 
 # Create your models here.
+# from classes.models import classes
+ 
