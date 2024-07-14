@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'course',
     'classes',
     'classperiod',
-    # 'django_extensions',
+    'django_extensions',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
